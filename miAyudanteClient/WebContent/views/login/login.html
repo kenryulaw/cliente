@@ -1,0 +1,47 @@
+<div class="brown">
+	
+	<div class="container">
+		
+		<div class="row">
+   
+		    <div class="col"></div>
+		    <div class="col-6">
+				<br><br>
+				
+				<div class="card z-depth-3" id="pnlLogin">
+				    <div class="card-header brown darken-2 white-text">
+				        {{inicioSesion}}
+				    </div>
+				    <div class="card-block">
+				        <ng-form name="loginForm">
+				        	
+				        	<div class="md-form">
+					            <i class="fa fa-envelope prefix"></i>
+					            <input type="text" id="pnlLogin.username" name="username" class="form-control" ng-model="userName" ng-pattern="regexUserName" ng-required="true">
+					            <label for="pnlLogin.username">{{usuario}}</label>
+					            <span ng-show="loginForm.username.$error.pattern" style="color:red">{{usuarioError}}</span>
+					        </div>
+							<br>
+					        <div class="md-form">
+					            <i class="fa fa-lock prefix"></i>
+					            <input type="password" id="pnlLogin.userPassword" name="userPassword" class="form-control" ng-model="userPassword" ng-pattern="regexUserPassword" ng-required="true">
+					            <label for="pnlLogin.userPassword">{{clave}}</label>
+					            <span ng-show="loginForm.userPassword.$error.pattern" style="color:red">{{claveError}}</span>
+					        </div>
+					        <button type="button" class="btn btn-brown darken-2 waves-effect" id="pnlLogin.submit" ng-click="doLogin()" ng-disabled="loginForm.userPassword.$error.pattern || loginForm.username.$error.pattern || loginForm.userPassword.$error.required || loginForm.username.$error.required">
+					        	<i class="fa fa-send-o right" aria-hidden="true"></i>
+					        	{{enviar}}
+					        </button>
+				        	
+				        </ng-form>
+				    </div>
+				</div>
+				<br><br>
+		    </div>
+		    <div class="col"></div>
+	    
+	  	</div>
+		
+	</div>
+	
+</div>
